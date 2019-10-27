@@ -17,7 +17,6 @@ class CreateArticlesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('body')->nullable();
-            $table->string('category');
             $table->boolean('published')->default(0);
             $table->timestamps();
         });

@@ -12,10 +12,12 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     
     public function index()
     {
-        $articles = Article::orderBy('created_at','DESC')->paginate(3);
-        return view('articles.index');
+        $articles = Article::orderBy('created_at','DESC')->get();
+        return view('articles.index')->with(compact('articles'));
     }
 
     /**
@@ -37,13 +39,13 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //Method 1
-        $article = new Article();
-        $article->title = $request->get('title');
-        $article->body = $request->get('body');
-        $article->published = $request->get('published');
-        $article->save();
+        // $article = new Article();
+        // $article->title = $request->get('title');
+        // $article->body = $request->get('body');
+        // $article->published = $request->get('published');
+        // $article->save();
         //Method 2
-        //$article = Article::create($request->only('title','body','published'));
+        $article = Article::create($request->only('title','body','published'));
         //Method 1
         // $user = auth()->user();
         // $article->user()->associate($user);
