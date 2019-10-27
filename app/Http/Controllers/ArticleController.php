@@ -78,7 +78,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit')->with(compact('article'));
     }
 
     /**
@@ -102,6 +102,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        return redirect()->route('articles:index')->with(['alert-type' => 'alert-danger','alert'=> 'Your article deleted']);
     }
 }
