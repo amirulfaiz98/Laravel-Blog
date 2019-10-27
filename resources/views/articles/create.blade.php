@@ -353,9 +353,9 @@
                                         name="title"
                                         value=""
                                     >
-                                    {{-- @error('title')
+                                    @error('title')
                                         <div class="invalid-feedback">{{ $errors->first('title')}}</div>
-                                    @enderror --}}
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="title">Body</label>
@@ -363,14 +363,14 @@
                                         name="body" id="body" cols="20" rows="10"
                                         class="form-control @error('body') is-invalid @enderror">{{ isset($article) ? old('body',$article->body) : old('body')}}
                                     </textarea>
-                                    {{-- @error('body')
+                                    @error('body')
                                         <div class="invalid-feedback">{{ $errors->first('body')}}</div>
-                                    @enderror --}}
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="title">Categories</label>
                                     <select name="categories[]" id="" class="form-control" multiple>
-                                        {{-- @foreach ($categories as $id => $name)
+                                        @foreach ($categories as $id => $name)
                                             <option
                                                 value="{{ $id }}"
                                                 @if(isset($article) && $article->categories->contains($id))
@@ -378,7 +378,7 @@
                                                 @endif>
                                                 {{ $name }}
                                             </option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
                     
@@ -386,12 +386,12 @@
                                     <label for="published">Published?</label>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="published" value="1"
-                                            {{-- {{ isset($article) && $article->published==1 ? 'checked' : ''}}> --}}
+                                            {{ isset($article) && $article->published==1 ? 'checked' : ''}}>
                                         <label class="form-check-label">Yes</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="published" value="0"
-                                            {{-- {{ isset($article) && $article->published==0 ? 'checked' : ''}}  > --}}
+                                            {{ isset($article) && $article->published==0 ? 'checked' : ''}}  >
                                         <label class="form-check-label">No</label>
                                     </div>
                                 </div>
