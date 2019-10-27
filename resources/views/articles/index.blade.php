@@ -370,7 +370,10 @@
                                             <td>{{ $article->id}}</td>
                                             <td>{{ $article->title}}</td>
                                             <td>{{ $article->created_at}}</td>
-                                            <td></td>
+                                            <td>
+                                                <a href="" class="btn btn-primary">Edit</a>
+                                                <a href="" class="btn btn-danger">Delete</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
