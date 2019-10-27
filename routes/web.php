@@ -22,6 +22,6 @@ Route::post('/article/create', 'ArticleController@store')->name('articles:store'
 Route::get('/articles/edit/{article}', 'ArticlesController@edit')->name('articles:edit');
 Route::post('/articles/edit/{article}', 'ArticlesController@update')->name('articles:update');
 Route::get('/articles/delete/{article}', 'ArticlesController@delete')->name('articles:delete');
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
