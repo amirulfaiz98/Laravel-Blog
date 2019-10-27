@@ -90,7 +90,8 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article = $article->update($request->only('title','body','published'));
+        return redirect()->route('articles:index')->with(['alert-type' => 'alert-success','alert'=> 'Your article updated']);
     }
 
     /**

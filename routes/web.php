@@ -19,8 +19,9 @@ Route::resource('article', 'ArticleController');
 Route::get('/article', 'ArticleController@index')->name('articles:index');
 Route::get('/article/create', 'ArticleController@create')->name('articles:create');
 Route::post('/article/create', 'ArticleController@store')->name('articles:store');
-// Route::get('/article/edit', 'ArticleController@edit')->name('articles:edit');
-// Route::post('/article/edit', 'ArticleController@update')->name('articles:update');
+Route::get('/articles/edit/{article}', 'ArticlesController@edit')->name('articles:edit');
+Route::post('/articles/edit/{article}', 'ArticlesController@update')->name('articles:update');
+Route::get('/articles/delete/{article}', 'ArticlesController@delete')->name('articles:delete');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
