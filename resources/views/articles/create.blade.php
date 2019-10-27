@@ -350,7 +350,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="title">Body</label>
-                                    <textarea name="body" id="body" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="body" id="body" cols="20" rows="10" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="published">Published?</label>
@@ -365,6 +365,7 @@
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Submit</button>
+                                    <a href="{{ route('articles:index')}}" class="btn btn-link">Cancel</a>
                                 </div>
                             </form>
                         </div>
