@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return view('articles.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -35,7 +35,25 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Method 1
+        $article = new Article();
+        $article->title = $request->get('title');
+        $article->body = $request->get('body');
+        $article->published = $request->get('published');
+        $article->save();
+        //Method 2
+        //$article = Article::create($request->only('title','body','published'));
+        //Method 1
+        // $user = auth()->user();
+        // $article->user()->associate($user);
+        // $article->save();
+        //Method 2
+        // $user = auth()->user();
+        // $article = $user->articles()->create($request->only('title','body','published'));
+        // $article->categories()->sync($request->get('categories'));
+        // $article->save();
+        //return redirect('/articles');
+        return redirect()->route('articles:index')->with(['alert-type' => 'alert-success','alert'=> 'Your article saved']);
     }
 
     /**

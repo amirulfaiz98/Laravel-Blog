@@ -14,7 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('article', 'ArticleController');
 
+Route::get('/article', 'ArticleController@index')->name('article');
+Route::get('/create', 'ArticleController@create')->name('articles:create');
+Route::post('/create', 'ArticleController@store')->name('articles:store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
